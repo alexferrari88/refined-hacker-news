@@ -1,3 +1,5 @@
+importScripts('browser-polyfill.min.js'); // Added for Manifest V3 service worker
+
 import OptionsSync from "webext-options-sync";
 
 import defaultConfigs from "./libs/default-configs";

@@ -4,18 +4,20 @@
   "version": "0.0.0",
   "description": "✨ Add useful features and tweak a few stuff to make the HN experience better without changing the look and feel",
   "homepage_url": "https://github.com/plibither8/refined-hacker-news",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "permissions": [
     "storage",
     "history",
-    "tabs",
+    "tabs"
+  ],
+  "host_permissions": [
     "*://news.ycombinator.com/*",
     "*://hacker-news.firebaseio.com/v0/*",
     "*://title.mihir.ch/*",
     "*://wayback.now.sh/*",
     "*://hn.algolia.com/*"
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
@@ -23,8 +25,7 @@
     "128": "icon.png"
   },
   "background": {
-    "scripts": ["browser-polyfill.min.js", "background.js"],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -39,7 +40,12 @@
       "js": ["browser-polyfill.min.js", "refined-hacker-news.js"]
     }
   ],
-  "web_accessible_resources": ["loader.gif"],
+  "web_accessible_resources": [
+    {
+      "resources": ["loader.gif"],
+      "matches": ["*://news.ycombinator.com/*"]
+    }
+  ],
   "applications": {
     "gecko": {
       "id": "refinedhackernews@mihir.ch"
