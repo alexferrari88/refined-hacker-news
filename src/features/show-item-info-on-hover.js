@@ -20,7 +20,7 @@ function init() {
 
     itemDiv.classList.add("__rhn__hover-info", "__rhn__no-display");
     itemDiv.style.left = link.getBoundingClientRect().left + "px";
-    itemDiv.innerHTML = `<img src=${browser.extension.getURL("loader.gif")}>`;
+    itemDiv.innerHTML = `<img src=${browser.runtime.getURL("loader.gif")}>`;
 
     link.parentElement.insertBefore(itemDiv, link.nextSibling);
 

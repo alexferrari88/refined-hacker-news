@@ -78,7 +78,7 @@ function init(metadata) {
   check.name = "autoRefreshEnabled";
   check.checked = options.autoRefreshEnabled;
 
-  label.innerHTML = "auto refresh every&nbsp;";
+  label.innerHTML = "auto refresh every ";
   label.setAttribute("for", "auto-refresh-check");
 
   input.type = "number";
@@ -86,7 +86,7 @@ function init(metadata) {
   input.name = "autoRefreshValue";
   input.value = options.autoRefreshValue;
 
-  loader.src = browser.extension.getURL("loader.gif");
+  loader.src = browser.runtime.getURL("loader.gif");
   loader.classList.add("__rhn__no-display");
 
   const enabledOptions = optionsBarEnabledOptions(metadata);

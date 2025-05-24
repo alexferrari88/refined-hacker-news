@@ -4,7 +4,7 @@ const scripts = [
   "version",
   // "release:amo",
   "zip",
-  "dev-dashboard",
+  //"dev-dashboard",
   "create-git-tag",
   "changelog",
 ];

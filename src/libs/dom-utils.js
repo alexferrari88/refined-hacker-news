@@ -59,21 +59,27 @@ export function getTopLevelComments() {
 
 export function getGroupedStories(itemlist) {
   const rows = [...itemlist.querySelectorAll(":scope > tbody > tr")];
-  while (!rows[0].matches(".athing")) {
+  while (rows.length > 0 && !rows[0].matches(".athing")) { // Added rows.length check
     rows.shift();
   }
 
   const stories = [];
 
   for (let i = 0; i < rows.length - 2; i += 3) {
+    if (!rows[i].matches(".athing")) continue; // Ensure it's a story row
     const id = parseInt(rows[i].id, 10);
-    const storyUrl = rows[i].querySelector("span.titleline a").href;
+    const titleline = rows[i].querySelector("span.titleline a");
+    if (!titleline) continue; // Ensure titleline exists
+    const storyUrl = titleline.href;
+
 
     const scoreSpan = rows[i + 1].querySelector("span.score");
     const score = scoreSpan ? parseInt(scoreSpan.innerText, 10) : undefined;
 
+    const rankElement = rows[i].querySelector("span.rank");
+    if (!rankElement) continue; // Ensure rank element exists
     const defaultRank = parseInt(
-      rows[i].querySelector("span.rank").innerText,
+      rankElement.innerText,
       10
     );
 
@@ -132,7 +138,7 @@ export function newReplyTextareasObserver(callback) {
 
 export function createSiblingLoader(element, customStyle = "") {
   const loader = document.createElement("img");
-  loader.src = browser.extension.getURL("loader.gif");
+  loader.src = browser.runtime.getURL("loader.gif");
   loader.style = customStyle;
   loader.classList.add("__rhn__loader");
   element.parentElement.insertBefore(loader, element.nextSibling);
