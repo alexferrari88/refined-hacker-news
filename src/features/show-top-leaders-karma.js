@@ -14,7 +14,7 @@ async function init() {
   for (const row of rows) {
     const cells = row.children;
     const user = cells[1].innerText;
-    cells[2].innerHTML = `<img src=${browser.extension.getURL("loader.gif")}>`;
+    cells[2].innerHTML = `<img src=${browser.runtime.getURL("loader.gif")}>`;
     promises.push(getUserInfo(user));
   }
 

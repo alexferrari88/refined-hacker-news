@@ -24,7 +24,7 @@ function init() {
 
         userDiv.classList.add("__rhn__hover-info", "__rhn__no-display");
         userDiv.style.left = user.getBoundingClientRect().left + "px";
-        userDiv.innerHTML = `<img src=${browser.extension.getURL(
+        userDiv.innerHTML = `<img src=${browser.runtime.getURL(
           "loader.gif"
         )}>`;
 

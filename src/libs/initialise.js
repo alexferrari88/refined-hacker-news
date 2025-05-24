@@ -118,7 +118,7 @@ const getMetadata = new Promise(async (resolve) => {
 
 async function createLoader() {
   const loader = document.createElement("div");
-  loader.innerHTML = `<img src='${browser.extension.getURL("loader.gif")}'>`;
+  loader.innerHTML = `<img src='${browser.runtime.getURL("loader.gif")}'>`;
   loader.classList.add("__rhn__extension-loader");
 
   const options = await getOptions;
