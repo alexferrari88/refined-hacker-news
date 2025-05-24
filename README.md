@@ -1,20 +1,25 @@
 # <img src="src/icon.png" width="45" align="left"> Refined Hacker News
 
-[link-cws]: https://chrome.google.com/webstore/detail/gcibdgjaladjjloeocimnijdgopejkfk "Version published on Chrome Web Store"
-[link-amo]: https://addons.mozilla.org/en-US/firefox/addon/refined-hacker-news/ "Version published on Mozilla Add-ons"
+> ✨ Browser extension that adds useful features and tweaks a few stuff on [Hacker News](https://news.ycombinator.com) to make the experience better... without changing the look and feel.
 
 [![Licence](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/gcibdgjaladjjloeocimnijdgopejkfk.svg?label=chrome%20users&style=flat-square)][link-cws]
-[![Mozilla Add-on](https://img.shields.io/amo/users/refined-hacker-news.svg?label=firefox%20users&style=flat-square)][link-amo]
+[![Mozilla Add-on](https://img.shields.io/amo/users/refined-hacker-news.svg?label=firefox%20users&style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/refined-hacker-news/)
 ![Made with love in India](https://madewithlove.now.sh/in?heart=true&colorB=%23ff701f&template=flat-square)
 
-> ✨ Browser extension that adds useful features and tweaks a few stuff on [Hacker News](https://news.ycombinator.com) to make the experience better... without changing the look and feel.
+---
+
+## ⚠️ About this fork
+
+This is a **fork of the original [Refined Hacker News](https://github.com/plibither8/refined-hacker-news)** updated to be compatible with **Manifest V3**, maintained at  
+👉 [https://github.com/alexferrari88/refined-hacker-news](https://github.com/alexferrari88/refined-hacker-news)
+
+The original Chrome Web Store link is no longer valid (until I submit this to the Chrome Extension store)
 
 The minimalist design of Hacker News is best at offering news the way we like it. Yet there are a few small interface tweaks and additional features that can drastically improve our experience while browsing through items and comments which this extension implements.
 
 Hopefully, in due course, a few of these tweaks can be implemented by Hacker News themselves. You can help too by emailing [hn@ycombinator.com](mailto:hn@ycombinator.com)!
 
-_Inspired by [Sindre Sorhus](https://github.com/sindresorhus)'s extension [Refined GitHub](https://github.com/sindresorhus/refined-github)._
+*Inspired by [Sindre Sorhus](https://github.com/sindresorhus)'s extension [Refined GitHub](https://github.com/sindresorhus/refined-github).*
 
 ## Contents
 
@@ -29,9 +34,30 @@ _Inspired by [Sindre Sorhus](https://github.com/sindresorhus)'s extension [Refin
 
 ## Install
 
-- [**Chrome** extension][link-cws] [<img valign="middle" src="https://img.shields.io/chrome-web-store/v/gcibdgjaladjjloeocimnijdgopejkfk.svg?label=%20">][link-cws]
-- [**Firefox** add-on][link-amo] [<img valign="middle" src="https://img.shields.io/amo/v/refined-hacker-news.svg?label=%20">][link-amo]
-- **Opera** extension: Use [this Opera extension](https://addons.opera.com/en/extensions/details/download-chrome-extension-9/) to install the Chrome version.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/alexferrari88/refined-hacker-news.git
+   cd refined-hacker-news
+	````
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Build the extension:
+
+   ```bash
+   npm run build
+   ```
+
+4. Open `chrome://extensions` in your Chrome browser.
+
+5. Enable **Developer mode** (top right corner).
+
+6. Click **"Load unpacked"** and select the `dist/` folder inside the project directory.
+
 
 ## Highlights
 
